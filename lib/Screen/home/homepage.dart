@@ -37,7 +37,7 @@ class _HomePageState extends State<HomePage> {
             Search_Box(),
             SizedBox(height: 15,),
             Container(
-              height: 700,
+              height: 800,
               width: size.width,
               decoration: const BoxDecoration(
                 color: kPrimaryLightColor,
