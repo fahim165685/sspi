@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:sspi/Screen/home/components/About_us/Administration.dart';
 import 'package:sspi/Screen/home/components/About_us/about_shebapolly.dart';
 import 'package:sspi/Screen/home/components/About_us/about_sspi.dart';
+import 'package:sspi/Screen/home/components/About_us/location.dart';
+import 'package:sspi/Screen/home/components/About_us/photo_gallery.dart';
 import 'package:sspi/constants.dart';
 
 class About_us extends StatelessWidget {
@@ -174,7 +176,9 @@ class About_us extends StatelessWidget {
             SizedBox(height: 20,),
 
             GestureDetector(
-              onTap: (){},
+              onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (_)=>Photo_Gallery()));
+              },
               child: Padding(
                 padding: const EdgeInsets.only(left: 60),
                 child: Container(
@@ -220,7 +224,9 @@ class About_us extends StatelessWidget {
             SizedBox(height: 20,),
 
             GestureDetector(
-              onTap: () {},
+              onTap: () {
+                Navigator.push(context,MaterialPageRoute(builder: (_)=>LocatonPage()),);
+              },
               child: Container(
                 height: 90,
                 width: 300,

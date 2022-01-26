@@ -13,7 +13,6 @@ class About_SSPI extends StatelessWidget {
     String about_2="Under the ideal and conceptual base of ‘serving humanity is serving religion’, the ultimate goal of education is ‘to gain  knowledge and skill for serving humanity’.  Similarly, Shebapolly Science and Polytechnic Institute is founded on the ideal that ‘service to humanity is at the heart of religion’.   It is thus an academic social enterprise dedicated to social wellbeing. It is established on its own 3-story building (with foundation for 6 stories) located in Shebapolly, Bhadughor, Brahmanbaria. It is fully equipped  with  required number of teachers, classrooms,  laboratories, and  hostel facilities  and   is now ready for admitting  students for the academic session 2017-2018.  Accordingly  announcements for admissions in the three technologies have been already made.";
     String about_3="At the top level it is administered by a 7-member Board of Directors with Professor Dr. Rafiqul Islam Molla as the Chairman.";
     return Scaffold(
-
       backgroundColor: kPrimaryColor,
       appBar: AppBar(title: const Text("About College"),
         backgroundColor: kPrimaryColor,shadowColor: Colors.transparent,),
