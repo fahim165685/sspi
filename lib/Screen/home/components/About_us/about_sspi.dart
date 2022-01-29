@@ -1,4 +1,5 @@
-import 'dart:ffi';
+
+import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:sspi/constants.dart';
@@ -17,79 +18,94 @@ class About_SSPI extends StatelessWidget {
       appBar: AppBar(title: const Text("About College"),
         backgroundColor: kPrimaryColor,shadowColor: Colors.transparent,),
       body:
-      SingleChildScrollView(
-        reverse: true,
-        child: Padding(
-          padding: const EdgeInsets.all(10.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const Text(
-                "About SSPI",
-                style:
-                TextStyle(
-                    fontWeight:FontWeight.bold,
-                    fontSize: 30,
-                    color: Colors.white
-                ),
+      SizedBox(height: size.height,
+        width: double.maxFinite,
+        child: Stack(
+          fit: StackFit.expand,
+          children: [
+            ImageFiltered(
+              imageFilter: ImageFilter.blur(sigmaY: 2,sigmaX: 2.5),
+              child: Image.asset(
+                "assets/images/logo_720.png",
               ),
-              const SizedBox(height: 15,),
-              const Text('Introduction to',
-                style:
-                TextStyle(fontSize: 15,
-                    fontWeight: FontWeight.bold,
-                    color: Color(0xFF00ff00)
-                ),
-              ),
-              const SizedBox(height: 5,),
-              const Text('Shebapolly Science and Polytechnic Institute',
-                style:
-                TextStyle(
-                    fontSize: 15,
-                    fontWeight: FontWeight.bold,
-                    color: Color(0xFF00ff00)
-                ),
-              ),
-              const SizedBox(height: 7,),
-              Text(about,style: TextStyle(color: kTextColor),),
-              const SizedBox(height: 7,),
-              Text(about_2,style: TextStyle(color: kTextColor),),
-              const SizedBox(height: 7,),
-              Text(about_3,style: TextStyle(color: kTextColor),),
-
-              GestureDetector(
-                onTap: (){
-                  showDialog(
-                      context: context,
-                      builder: (context) =>AlertDialog(
-                        title: Text("About Information",style: TextStyle(color:kTextColor),),
-                        content: Text('All information on this page is taken from www.sspi.edu.bd.',style: TextStyle(color: Colors.white54),),
-                        backgroundColor: Colors.transparent,
-
-                      )
-                  );
-                },
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            ),
+            SingleChildScrollView(
+              reverse: true,
+              child: Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Container(
-                      height: 1,
-                      width: 150,
-                      color: kTextColor,
+                    const Text(
+                      "About SSPI",
+                      style:
+                      TextStyle(
+                          fontWeight:FontWeight.bold,
+                          fontSize: 30,
+                          color: Colors.white
+                      ),
                     ),
-                  const Text("</>", style: TextStyle(color: accentColor),),
-                    Container(
-                      height: 1,
-                      width: 150,
-                      color: kTextColor,
+                    const SizedBox(height: 15,),
+                    const Text('Introduction to',
+                      style:
+                      TextStyle(fontSize: 15,
+                          fontWeight: FontWeight.bold,
+                          color: Color(0xFF00ff00)
+                      ),
+                    ),
+                    const SizedBox(height: 5,),
+                    const Text('Shebapolly Science and Polytechnic Institute',
+                      style:
+                      TextStyle(
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold,
+                          color: Color(0xFF00ff00)
+                      ),
+                    ),
+                    const SizedBox(height: 7,),
+                    Text(about,style: TextStyle(color: kTextColor),),
+                    const SizedBox(height: 7,),
+                    Text(about_2,style: TextStyle(color: kTextColor),),
+                    const SizedBox(height: 7,),
+                    Text(about_3,style: TextStyle(color: kTextColor),),
+
+                    GestureDetector(
+                      onTap: (){
+                        showDialog(
+                            context: context,
+                            builder: (context) =>AlertDialog(
+                              title: Text("About Information",style: TextStyle(color:kTextColor),),
+                              content: Text('All information on this page is taken from www.sspi.edu.bd.',style: TextStyle(color: Colors.white54),),
+                              backgroundColor: Colors.transparent,
+                            )
+                        );
+                      },
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Container(
+                            height: 1,
+                            width: 150,
+                            color: kTextColor,
+                          ),
+                          const Text("</>", style: TextStyle(color: accentColor),),
+                          Container(
+                            height: 1,
+                            width: 150,
+                            color: kTextColor,
+                          )
+                        ],
+                      ),
                     )
                   ],
                 ),
-              )
-            ],
-          ),
+              ),
+            ),
+
+          ],
         ),
+
       ),
 
     );

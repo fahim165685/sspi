@@ -5,8 +5,8 @@ import 'package:sspi/Screen/home/components/Academis/academic_system.dart';
 import 'package:sspi/constants.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class academis extends StatelessWidget {
-  const academis({Key? key}) : super(key: key);
+class Department extends StatelessWidget {
+  const Department({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -15,9 +15,9 @@ class academis extends StatelessWidget {
       extendBodyBehindAppBar: false,
       backgroundColor: kPrimaryColor,
       appBar: AppBar(
-        title: Text("Academis"),
+        title: Text("Depariment"),
 
-        actions: [Image.asset("assets/icons/Acadamic.png",width: 35,height: 35,),],
+        actions: [Image.asset("assets/icons/Department.png",width: 35,height: 35,),],
         foregroundColor: accentColor,
         backgroundColor:Color(0xE433B1FF),
         shadowColor:Color(0xE433B1FF),
@@ -48,7 +48,7 @@ class academis extends StatelessWidget {
                     const Padding(
                       padding: EdgeInsets.only(left: 10),
                       child: Text(
-                        "Acadamic System",
+                        "Computer Tecnology ",
                         style: TextStyle(
                             fontSize: 20,
                             color: kTextColor,
@@ -59,16 +59,19 @@ class academis extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.only(top: 47),
                       child: Container(
-                        height: 40,
+                        height: 50,
                         width: 55,
-                        child: Icon(Icons.east,color: Colors.white,size: 25,),
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Image(image:AssetImage("assets/icons/Computer.png"),color: Colors.white,),
+                        ),
                         decoration: BoxDecoration(
-                            color: accentColor,
-                            borderRadius:
-                            BorderRadius.only(
-                              topLeft: Radius.circular(30),
-                              bottomRight: Radius.circular(30),
-                            ),
+                          color: accentColor,
+                          borderRadius:
+                          BorderRadius.only(
+                            topLeft: Radius.circular(30),
+                            bottomRight: Radius.circular(30),
+                          ),
                         ),
                       ),
                     ),
@@ -105,7 +108,7 @@ class academis extends StatelessWidget {
                     Padding(
                       padding: EdgeInsets.only(left: 10),
                       child: Text(
-                        "Syllabus",
+                        "Elictrical Tecnology",
                         style: TextStyle(
                             fontSize: 20,
                             color: kTextColor,
@@ -118,7 +121,10 @@ class academis extends StatelessWidget {
                       child: Container(
                         height: 40,
                         width: 55,
-                        child: Icon(Icons.east,color: Colors.white,size: 25,),
+                        child:  Padding(
+                          padding: const EdgeInsets.all(6.0),
+                          child: Image(image:AssetImage("assets/icons/Elictrical.png"),color: Colors.white,),
+                        ),
                         decoration: BoxDecoration(
                           color: accentColor,
                           borderRadius:
@@ -154,7 +160,7 @@ class academis extends StatelessWidget {
                 final url = "http://btebresults.herokuapp.com/";
                 if(await canLaunch(url)){
                   await launch(url,
-                  forceWebView: true,
+                    forceWebView: true,
                     enableJavaScript: true,
                   );
                 }

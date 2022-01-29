@@ -34,7 +34,7 @@ class AdministrationPage extends StatelessWidget {
               padding: const EdgeInsets.only(left: 100),
               child: GestureDetector(
                 onTap: () async{
-                  final url = "https://www.sspi.edu.bd/wp-content/uploads/2018/06/Admission-notice.pdf";
+                  final url = "https://www.sspi.edu.bd/about-us/administration/";
                   if(await canLaunch(url)){
                     await launch(
                         url,

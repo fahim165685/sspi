@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sspi/Screen/home/components/About_us/aboutt_us.dart';
 import 'package:sspi/Screen/home/components/Academis/academis.dart';
+import 'package:sspi/Screen/home/components/Department/department.dart';
 import 'package:sspi/constants.dart';
 
 class listMenu extends StatelessWidget {
@@ -143,7 +144,8 @@ class listMenu extends StatelessWidget {
                 ),
               ),
               GestureDetector(
-                onTap: (){},
+                onTap: (){Navigator.push(context,MaterialPageRoute(builder: (_)=>Department()));
+                },
                 child: Row(
                   children: [
                     Padding(
