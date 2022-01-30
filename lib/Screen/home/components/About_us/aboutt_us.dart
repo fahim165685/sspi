@@ -96,7 +96,7 @@ class About_us extends StatelessWidget {
                     children: const [
                       Padding(
                         padding: EdgeInsets.only(left: 10),
-                        child: Icon(Icons.help,size: 50,color: accentColor,),
+                        child: Icon(Icons.quiz,size: 50,color: accentColor,),
                       ),
                       Padding(
                         padding: EdgeInsets.only(right: 10),

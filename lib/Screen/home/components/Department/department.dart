@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'dart:ui';
-import 'package:sspi/Screen/home/components/Academis/Syllabus.dart';
-import 'package:sspi/Screen/home/components/Academis/academic_system.dart';
+import 'package:sspi/Screen/home/components/Department/computer_tecnology.dart';
+import 'package:sspi/Screen/home/components/Department/cvil_tecnology.dart';
+import 'package:sspi/Screen/home/components/Department/elictrical_tecnology.dart';
 import 'package:sspi/constants.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class Department extends StatelessWidget {
   const Department({Key? key}) : super(key: key);
@@ -37,7 +37,7 @@ class Department extends StatelessWidget {
 
             GestureDetector(
               onTap: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context) =>AcademicSystem(), ),);
+                Navigator.push(context, MaterialPageRoute(builder: (context) =>Computer(), ),);
               },
               child: Container(
                 height: 90,
@@ -62,7 +62,7 @@ class Department extends StatelessWidget {
                         height: 50,
                         width: 55,
                         child: Padding(
-                          padding: const EdgeInsets.all(8.0),
+                          padding: const EdgeInsets.all(6.0),
                           child: Image(image:AssetImage("assets/icons/Computer.png"),color: Colors.white,),
                         ),
                         decoration: BoxDecoration(
@@ -97,7 +97,7 @@ class Department extends StatelessWidget {
 
             GestureDetector(
               onTap: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context) =>SyllabusPage(), ),);
+                Navigator.push(context, MaterialPageRoute(builder: (context) =>ElictricalTecnology(), ),);
               },
               child: Container(
                 height: 90,
@@ -156,17 +156,9 @@ class Department extends StatelessWidget {
             SizedBox(height: 40,),
 
             GestureDetector(
-              onTap: () async{
-                final url = "http://btebresults.herokuapp.com/";
-                if(await canLaunch(url)){
-                  await launch(url,
-                    forceWebView: true,
-                    enableJavaScript: true,
-                  );
-                }
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) =>CIVILTecnology(), ),);
               },
-
-
               child: Container(
                 height: 90,
                 width: 300,
@@ -176,7 +168,7 @@ class Department extends StatelessWidget {
                     Padding(
                       padding: EdgeInsets.only(left: 10),
                       child: Text(
-                        "Results",
+                        "CIVIL Tecnology",
                         style: TextStyle(
                             fontSize: 20,
                             color: kTextColor,
@@ -189,7 +181,10 @@ class Department extends StatelessWidget {
                       child: Container(
                         height: 40,
                         width: 55,
-                        child: Icon(Icons.east,color: Colors.white,size: 25,),
+                        child:  Padding(
+                          padding: const EdgeInsets.all(6.0),
+                          child: Image(image:AssetImage("assets/icons/cvil .png"),color: Colors.white,),
+                        ),
                         decoration: BoxDecoration(
                           color: accentColor,
                           borderRadius:
@@ -217,6 +212,7 @@ class Department extends StatelessWidget {
                 ),
               ),
             ),
+            SizedBox(height: 10,),
 
           ],
         ),

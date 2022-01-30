@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:sspi/Screen/home/components/About_us/aboutt_us.dart';
 import 'package:sspi/Screen/home/components/Academis/academis.dart';
 import 'package:sspi/Screen/home/components/Department/department.dart';
+import 'package:sspi/Screen/home/components/Routine/routine.dart';
+import 'package:sspi/Screen/home/components/Teacers/teacers.dart';
 import 'package:sspi/constants.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class listMenu extends StatelessWidget {
   const listMenu({Key? key}) : super(key: key);
@@ -208,7 +211,9 @@ class listMenu extends StatelessWidget {
                 ),
               ),
               GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (_)=>TeacherPage(),),);
+                },
                 child: Row(
                   children: [
                     Padding(
@@ -271,7 +276,9 @@ class listMenu extends StatelessWidget {
                 ),
               ),
               GestureDetector(
-                onTap: () {},
+                onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (_)=>RoutinePage(),),);
+                },
                 child: Row(
                   children: [
                     Padding(
@@ -334,7 +341,15 @@ class listMenu extends StatelessWidget {
                 ),
               ),
               GestureDetector(
-                onTap: (){},
+                onTap: ()async{
+                    final url = "https://www.sspi.edu.bd/notice/";
+                    if(await canLaunch(url)){
+                      await launch(url,
+                             forceWebView: true,
+                             enableJavaScript: true,
+                      );
+                 }
+               },
                 child: Row(
                   children: [
                     Padding(

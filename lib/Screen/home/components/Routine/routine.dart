@@ -5,8 +5,8 @@ import 'package:sspi/Screen/home/components/Academis/academic_system.dart';
 import 'package:sspi/constants.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class academis extends StatelessWidget {
-  const academis({Key? key}) : super(key: key);
+class RoutinePage extends StatelessWidget {
+  const RoutinePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -17,8 +17,8 @@ class academis extends StatelessWidget {
       appBar: AppBar(
         iconTheme: IconThemeData(color: Colors.white),
 
-        title: Text("Academis",style: TextStyle(color: Colors.white),),
-        actions: [Image.asset("assets/icons/Acadamic.png",width: 35,height: 35,color: Colors.white,),],
+        title: Text("Routine Page",style: TextStyle(color: Colors.white),),
+        actions: [Image.asset("assets/icons/Routin.png",width: 35,height: 35,color: Colors.white,),],
         foregroundColor: accentColor,
         backgroundColor:Color(0xff14f076),
         shadowColor:Colors.transparent,
@@ -37,8 +37,14 @@ class academis extends StatelessWidget {
             SizedBox(height: 25,),
 
             GestureDetector(
-              onTap: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context) =>AcademicSystem(), ),);
+              onTap: ()async{
+                final url = "https://www.sspi.edu.bd/academics/class-routine/";
+                if(await canLaunch(url)){
+                  await launch(url,
+                    // forceWebView: true,
+                    // enableJavaScript: true,
+                  );
+                }
               },
               child: Container(
                 height: 90,
@@ -49,7 +55,7 @@ class academis extends StatelessWidget {
                     const Padding(
                       padding: EdgeInsets.only(left: 10),
                       child: Text(
-                        "Acadamic System",
+                        "Class Routin",
                         style: TextStyle(
                             fontSize: 20,
                             color: kTextColor,
@@ -64,12 +70,12 @@ class academis extends StatelessWidget {
                         width: 55,
                         child: Icon(Icons.east,color: Colors.white,size: 25,),
                         decoration: BoxDecoration(
-                            color: Color(0xff14f076),
-                            borderRadius:
-                            BorderRadius.only(
-                              topLeft: Radius.circular(30),
-                              bottomRight: Radius.circular(30),
-                            ),
+                          color: Color(0xff14f076),
+                          borderRadius:
+                          BorderRadius.only(
+                            topLeft: Radius.circular(30),
+                            bottomRight: Radius.circular(30),
+                          ),
                         ),
                       ),
                     ),
@@ -94,8 +100,13 @@ class academis extends StatelessWidget {
             SizedBox(height: 40,),
 
             GestureDetector(
-              onTap: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context) =>SyllabusPage(), ),);
+              onTap: ()async{
+                final url = "https://www.sspi.edu.bd/academics/exam-routine/";
+                if(await canLaunch(url)){
+                  await launch(url,
+
+                  );
+                }
               },
               child: Container(
                 height: 90,
@@ -106,7 +117,7 @@ class academis extends StatelessWidget {
                     Padding(
                       padding: EdgeInsets.only(left: 10),
                       child: Text(
-                        "Syllabus",
+                        "Exam Routin",
                         style: TextStyle(
                             fontSize: 20,
                             color: kTextColor,
@@ -152,11 +163,10 @@ class academis extends StatelessWidget {
 
             GestureDetector(
               onTap: () async{
-                final url = "http://btebresults.herokuapp.com/";
+                final url = "https://www.sspi.edu.bd/mid-exam-routine/";
                 if(await canLaunch(url)){
                   await launch(url,
-                  forceWebView: true,
-                    enableJavaScript: true,
+
                   );
                 }
               },
@@ -171,7 +181,7 @@ class academis extends StatelessWidget {
                     Padding(
                       padding: EdgeInsets.only(left: 10),
                       child: Text(
-                        "Results",
+                        "Mid Exam Routin",
                         style: TextStyle(
                             fontSize: 20,
                             color: kTextColor,

@@ -27,12 +27,13 @@ class SyllabusPage extends StatelessWidget {
             fit: StackFit.expand,
             children: [
               ImageFiltered(
-                imageFilter: ImageFilter.blur(sigmaY: 0.8,sigmaX: 0.8),
+                imageFilter: ImageFilter.blur(sigmaY: 1,sigmaX: 2),
                 child: Image.asset(
                     "assets/images/BG_Inage.jpg",
                   fit: BoxFit.cover,
                 ),
               ),
+             SizedBox(height: 100,),
              Column(
                mainAxisAlignment: MainAxisAlignment.start,
                crossAxisAlignment: CrossAxisAlignment.start,
@@ -87,11 +88,11 @@ class SyllabusPage extends StatelessWidget {
                      ),
                    ),
                  ),
-
+                 SizedBox(height: 100,),
                  GestureDetector(
                    onTap: () {},
                    child: Padding(
-                     padding: const EdgeInsets.only(top:200),
+                     padding: const EdgeInsets.only(top:0),
                      child: Column(
                        mainAxisAlignment: MainAxisAlignment.start,
                        crossAxisAlignment: CrossAxisAlignment.start,
