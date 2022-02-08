@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:sspi/Screen/home/components/About_us/aboutt_us.dart';
-import 'package:sspi/Screen/home/components/Academis/academis.dart';
-import 'package:sspi/Screen/home/components/Department/department.dart';
-import 'package:sspi/Screen/home/components/Routine/routine.dart';
-import 'package:sspi/Screen/home/components/Teacers/teacers.dart';
+import 'package:sspi/Screen/Data/About_us/aboutt_us.dart';
+import 'package:sspi/Screen/Data/Academis/academis.dart';
+import 'package:sspi/Screen/Data/Department/department.dart'
+;import 'package:sspi/Screen/Routine/routine.dart';
+import 'package:sspi/Screen/Data/Teacers/teacers.dart';
 import 'package:sspi/constants.dart';
 import 'package:url_launcher/url_launcher.dart';
 

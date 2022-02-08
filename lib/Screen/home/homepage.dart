@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:sspi/Screen/drawer_Bar/NevBar.dart';
 import 'package:sspi/Screen/home/components/list_menu.dart';
-import 'package:sspi/Screen/home/components/search_box.dart';
-import 'package:sspi/Screen/home/components/sliderI_images.dart';
-
+import 'package:sspi/Screen/search_box/search_box.dart';
+import 'package:sspi/Screen/carousel_slider/home_page_images.dart';
 import 'package:sspi/constants.dart';
 
 
@@ -32,7 +31,7 @@ class _HomePageState extends State<HomePage> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            SliderImages(),
+            HomeSliderImages(),
             SizedBox(height: 15,),
             Search_Box(),
             SizedBox(height: 15,),

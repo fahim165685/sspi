@@ -67,6 +67,7 @@ class Body extends StatelessWidget {
               right: 100.0,
               child: GestureDetector(
                 onTap: () {
+                  Navigator.pop(context);
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (_) => HomePage(),),);

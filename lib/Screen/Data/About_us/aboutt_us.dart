@@ -1,10 +1,10 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
-import 'package:sspi/Screen/home/components/About_us/Administration.dart';
-import 'package:sspi/Screen/home/components/About_us/about_shebapolly.dart';
-import 'package:sspi/Screen/home/components/About_us/about_sspi.dart';
-import 'package:sspi/Screen/home/components/About_us/location.dart';
-import 'package:sspi/Screen/home/components/About_us/photo_gallery.dart';
+import 'package:sspi/Screen/Data/About_us/components/Administration.dart';
+import 'package:sspi/Screen/Data/About_us/components/about_shebapolly.dart';
+import 'package:sspi/Screen/Data/About_us/components/about_sspi.dart';
+import 'package:sspi/Screen/Data/About_us/components/location.dart';
+import 'package:sspi/Screen/Data/About_us/components/photo_gallery.dart';
 import 'package:sspi/constants.dart';
 
 class About_us extends StatelessWidget {
@@ -73,8 +73,9 @@ class About_us extends StatelessWidget {
                   ],
                   color: kPrimaryLightColor,
                   borderRadius: BorderRadius.only(
-                      topRight: Radius.circular(50),
-                    bottomRight: Radius.circular(50),
+                      topLeft: Radius.circular(50),
+                      bottomRight: Radius.circular(50),
+
                   ),
                 ),
               ),
@@ -86,43 +87,41 @@ class About_us extends StatelessWidget {
               onTap: (){
                 Navigator.push(context, MaterialPageRoute(builder: (context) => About_shebapolly(),),);
               },
-              child: Padding(
-                padding: const EdgeInsets.only(left: 60),
-                child: Container(
-                  height: 90,
-                  width: 300,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: const [
-                      Padding(
-                        padding: EdgeInsets.only(left: 10),
-                        child: Icon(Icons.quiz,size: 50,color: accentColor,),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(right: 10),
-                        child: Text(
-                          "About Shebapolly",
-                          style: TextStyle(
-                            color: kTextColor,
-                              fontSize: 20,
-                            fontWeight: FontWeight.bold
-                          ),
+              child: Container(
+                height: 90,
+                width: 300,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: const [
+
+                    Padding(
+                      padding: EdgeInsets.only(left: 10),
+                      child: Text(
+                        "About Shebapolly",
+                        style: TextStyle(
+                          color: kTextColor,
+                            fontSize: 20,
+                          fontWeight: FontWeight.bold
                         ),
                       ),
-                    ],
-                  ),
-                  decoration: const BoxDecoration(
-                    boxShadow: [
-                      BoxShadow(color:Colors.black26,
-                          offset: Offset(2, 10),
-                          blurRadius: 10
-                      )
-                    ],
-                    color: kPrimaryLightColor,
-                    borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(50),
-                        bottomLeft: Radius.circular(50)
                     ),
+                    Padding(
+                      padding: EdgeInsets.only(right:  10),
+                      child: Icon(Icons.quiz,size: 50,color: accentColor,),
+                    ),
+                  ],
+                ),
+                decoration: const BoxDecoration(
+                  boxShadow: [
+                    BoxShadow(color:Colors.black26,
+                        offset: Offset(2, 10),
+                        blurRadius: 10
+                    )
+                  ],
+                  color: kPrimaryLightColor,
+                  borderRadius: BorderRadius.only(
+                      topRight: Radius.circular(50),
+                      bottomLeft: Radius.circular(50)
                   ),
                 ),
               ),
@@ -166,8 +165,8 @@ class About_us extends StatelessWidget {
                   ],
                   color: kPrimaryLightColor,
                   borderRadius: BorderRadius.only(
-                      topRight: Radius.circular(50),
-                      bottomRight: Radius.circular(50)
+                      topLeft: Radius.circular(50),
+                      bottomRight:  Radius.circular(50)
                   ),
                 ),
               ),
@@ -179,43 +178,40 @@ class About_us extends StatelessWidget {
               onTap: (){
                 Navigator.push(context, MaterialPageRoute(builder: (_)=>Photo_Gallery()));
               },
-              child: Padding(
-                padding: const EdgeInsets.only(left: 60),
-                child: Container(
-                  height: 90,
-                  width: 300,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: const [
-                      Padding(
-                        padding: EdgeInsets.only(left: 10),
-                        child: Text(
-                          "Photo Gallery",
-                          style: TextStyle(
-                              fontSize: 20,
-                              color: kTextColor,
-                              fontWeight:FontWeight.bold
-                          ),
+              child: Container(
+                height: 90,
+                width: 300,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: const [
+                    Padding(
+                      padding: EdgeInsets.only(left: 10),
+                      child: Text(
+                        "Photo Gallery",
+                        style: TextStyle(
+                            fontSize: 20,
+                            color: kTextColor,
+                            fontWeight:FontWeight.bold
                         ),
                       ),
-                      Padding(
-                        padding: EdgeInsets.only(right: 10),
-                        child: Icon(Icons.photo_library,color: accentColor,size: 45,),
-                      )
-                    ],
-                  ),
-                  decoration: const BoxDecoration(
-                    boxShadow: [
-                      BoxShadow(color:Colors.black26,
-                          offset: Offset(2, 10),
-                          blurRadius: 10
-                      )
-                    ],
-                    color: kPrimaryLightColor,
-                    borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(50),
-                        bottomLeft: Radius.circular(50)
                     ),
+                    Padding(
+                      padding: EdgeInsets.only(right: 10),
+                      child: Icon(Icons.photo_library,color: accentColor,size: 45,),
+                    )
+                  ],
+                ),
+                decoration: const BoxDecoration(
+                  boxShadow: [
+                    BoxShadow(color:Colors.black26,
+                        offset: Offset(2, 10),
+                        blurRadius: 10
+                    )
+                  ],
+                  color: kPrimaryLightColor,
+                  borderRadius: BorderRadius.only(
+                      topRight: Radius.circular(50),
+                      bottomLeft: Radius.circular(50)
                   ),
                 ),
               ),
@@ -225,7 +221,7 @@ class About_us extends StatelessWidget {
 
             GestureDetector(
               onTap: () {
-                Navigator.push(context,MaterialPageRoute(builder: (_)=>LocatonPage()),);
+                Navigator.push(context,MaterialPageRoute(builder: (_)=>LocationPage()),);
               },
               child: Container(
                 height: 90,
@@ -259,7 +255,7 @@ class About_us extends StatelessWidget {
                   ],
                   color: kPrimaryLightColor,
                   borderRadius: BorderRadius.only(
-                      topRight: Radius.circular(50),
+                      topLeft: Radius.circular(50),
                       bottomRight: Radius.circular(50)
                   ),
                 ),

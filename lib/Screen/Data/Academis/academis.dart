@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'dart:ui';
-import 'package:sspi/Screen/home/components/Department/computer_tecnology.dart';
-import 'package:sspi/Screen/home/components/Department/cvil_tecnology.dart';
-import 'package:sspi/Screen/home/components/Department/elictrical_tecnology.dart';
+import 'package:sspi/Screen/Data/Academis/components/Syllabus.dart';
+import 'package:sspi/Screen/Data/Academis/components/academic_system.dart';
 import 'package:sspi/constants.dart';
+import 'package:url_launcher/url_launcher.dart';
 
-class Department extends StatelessWidget {
-  const Department({Key? key}) : super(key: key);
+class academis extends StatelessWidget {
+  const academis({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -15,13 +15,14 @@ class Department extends StatelessWidget {
       extendBodyBehindAppBar: false,
       backgroundColor: kPrimaryColor,
       appBar: AppBar(
-        title: Text("Depariment"),
+        iconTheme: IconThemeData(color: Colors.white),
 
-        actions: [Image.asset("assets/icons/Department.png",width: 35,height: 35,),],
+        title: Text("Academis",style: TextStyle(color: Colors.white),),
+        actions: [Image.asset("assets/icons/Acadamic.png",width: 35,height: 35,color: Colors.white,),],
         foregroundColor: accentColor,
-        backgroundColor:Color(0xE433B1FF),
-        shadowColor:Color(0xE433B1FF),
-        elevation: 10,
+        backgroundColor:Color(0xff14f076),
+        shadowColor:Colors.transparent,
+        elevation: 0,
       ),
       body:SingleChildScrollView(
         child: Column(
@@ -29,15 +30,15 @@ class Department extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Image.asset(
-              "assets/images/Academis.png",
+              "assets/images/Academi_01.png",
               fit: BoxFit.cover,
             ),
 
-            SizedBox(height: 20,),
+            SizedBox(height: 25,),
 
             GestureDetector(
               onTap: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context) =>Computer(), ),);
+                Navigator.push(context, MaterialPageRoute(builder: (context) =>AcademicSystem(), ),);
               },
               child: Container(
                 height: 90,
@@ -48,7 +49,7 @@ class Department extends StatelessWidget {
                     const Padding(
                       padding: EdgeInsets.only(left: 10),
                       child: Text(
-                        "Computer Tecnology ",
+                        "Acadamic System",
                         style: TextStyle(
                             fontSize: 20,
                             color: kTextColor,
@@ -59,19 +60,16 @@ class Department extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.only(top: 47),
                       child: Container(
-                        height: 50,
+                        height: 40,
                         width: 55,
-                        child: Padding(
-                          padding: const EdgeInsets.all(6.0),
-                          child: Image(image:AssetImage("assets/icons/Computer.png"),color: Colors.white,),
-                        ),
+                        child: Icon(Icons.east,color: Colors.white,size: 25,),
                         decoration: BoxDecoration(
-                          color: accentColor,
-                          borderRadius:
-                          BorderRadius.only(
-                            topLeft: Radius.circular(30),
-                            bottomRight: Radius.circular(30),
-                          ),
+                            color: Color(0xff14f076),
+                            borderRadius:
+                            BorderRadius.only(
+                              topLeft: Radius.circular(30),
+                              bottomRight: Radius.circular(30),
+                            ),
                         ),
                       ),
                     ),
@@ -97,7 +95,7 @@ class Department extends StatelessWidget {
 
             GestureDetector(
               onTap: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context) =>ElictricalTecnology(), ),);
+                Navigator.push(context, MaterialPageRoute(builder: (context) =>SyllabusPage(), ),);
               },
               child: Container(
                 height: 90,
@@ -108,7 +106,7 @@ class Department extends StatelessWidget {
                     Padding(
                       padding: EdgeInsets.only(left: 10),
                       child: Text(
-                        "Elictrical Tecnology",
+                        "Syllabus",
                         style: TextStyle(
                             fontSize: 20,
                             color: kTextColor,
@@ -121,12 +119,9 @@ class Department extends StatelessWidget {
                       child: Container(
                         height: 40,
                         width: 55,
-                        child:  Padding(
-                          padding: const EdgeInsets.all(6.0),
-                          child: Image(image:AssetImage("assets/icons/Elictrical.png"),color: Colors.white,),
-                        ),
+                        child: Icon(Icons.east,color: Colors.white,size: 25,),
                         decoration: BoxDecoration(
-                          color: accentColor,
+                          color: Color(0xff14f076),
                           borderRadius:
                           BorderRadius.only(
                             topLeft: Radius.circular(30),
@@ -156,9 +151,17 @@ class Department extends StatelessWidget {
             SizedBox(height: 40,),
 
             GestureDetector(
-              onTap: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) =>CIVILTecnology(), ),);
+              onTap: () async{
+                final url = "http://btebresults.herokuapp.com/";
+                if(await canLaunch(url)){
+                  await launch(url,
+                  forceWebView: true,
+                    enableJavaScript: true,
+                  );
+                }
               },
+
+
               child: Container(
                 height: 90,
                 width: 300,
@@ -168,7 +171,7 @@ class Department extends StatelessWidget {
                     Padding(
                       padding: EdgeInsets.only(left: 10),
                       child: Text(
-                        "CIVIL Tecnology",
+                        "Results",
                         style: TextStyle(
                             fontSize: 20,
                             color: kTextColor,
@@ -181,12 +184,9 @@ class Department extends StatelessWidget {
                       child: Container(
                         height: 40,
                         width: 55,
-                        child:  Padding(
-                          padding: const EdgeInsets.all(6.0),
-                          child: Image(image:AssetImage("assets/icons/cvil .png"),color: Colors.white,),
-                        ),
+                        child: Icon(Icons.east,color: Colors.white,size: 25,),
                         decoration: BoxDecoration(
-                          color: accentColor,
+                          color: Color(0xff14f076),
                           borderRadius:
                           BorderRadius.only(
                             topLeft: Radius.circular(30),
@@ -212,7 +212,6 @@ class Department extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 10,),
 
           ],
         ),

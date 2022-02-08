@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:sspi/Screen/Data/Department/components/computer_tecnology.dart';
+import 'package:sspi/Screen/Data/Department/components/cvil_tecnology.dart';
+import 'package:sspi/Screen/Data/Department/components/elictrical_tecnology.dart';
 import 'dart:ui';
-import 'package:sspi/Screen/home/components/Academis/Syllabus.dart';
-import 'package:sspi/Screen/home/components/Academis/academic_system.dart';
 import 'package:sspi/constants.dart';
-import 'package:url_launcher/url_launcher.dart';
 
-class RoutinePage extends StatelessWidget {
-  const RoutinePage({Key? key}) : super(key: key);
+class Department extends StatelessWidget {
+  const Department({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -15,14 +15,13 @@ class RoutinePage extends StatelessWidget {
       extendBodyBehindAppBar: false,
       backgroundColor: kPrimaryColor,
       appBar: AppBar(
-        iconTheme: IconThemeData(color: Colors.white),
+        title: Text("Depariment"),
 
-        title: Text("Routine Page",style: TextStyle(color: Colors.white),),
-        actions: [Image.asset("assets/icons/Routin.png",width: 35,height: 35,color: Colors.white,),],
+        actions: [Image.asset("assets/icons/Department.png",width: 35,height: 35,),],
         foregroundColor: accentColor,
-        backgroundColor:Color(0xff14f076),
-        shadowColor:Colors.transparent,
-        elevation: 0,
+        backgroundColor:Color(0xE433B1FF),
+        shadowColor:Color(0xE433B1FF),
+        elevation: 10,
       ),
       body:SingleChildScrollView(
         child: Column(
@@ -30,21 +29,15 @@ class RoutinePage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Image.asset(
-              "assets/images/Academi_01.png",
+              "assets/images/department_imeage.png",
               fit: BoxFit.cover,
             ),
 
-            SizedBox(height: 25,),
+            SizedBox(height: 20,),
 
             GestureDetector(
-              onTap: ()async{
-                final url = "https://www.sspi.edu.bd/academics/class-routine/";
-                if(await canLaunch(url)){
-                  await launch(url,
-                    // forceWebView: true,
-                    // enableJavaScript: true,
-                  );
-                }
+              onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context) =>Computer(), ),);
               },
               child: Container(
                 height: 90,
@@ -55,7 +48,7 @@ class RoutinePage extends StatelessWidget {
                     const Padding(
                       padding: EdgeInsets.only(left: 10),
                       child: Text(
-                        "Class Routin",
+                        "Computer Tecnology ",
                         style: TextStyle(
                             fontSize: 20,
                             color: kTextColor,
@@ -66,11 +59,14 @@ class RoutinePage extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.only(top: 47),
                       child: Container(
-                        height: 40,
+                        height: 50,
                         width: 55,
-                        child: Icon(Icons.east,color: Colors.white,size: 25,),
+                        child: Padding(
+                          padding: const EdgeInsets.all(6.0),
+                          child: Image(image:AssetImage("assets/icons/Computer.png"),color: Colors.white,),
+                        ),
                         decoration: BoxDecoration(
-                          color: Color(0xff14f076),
+                          color: accentColor,
                           borderRadius:
                           BorderRadius.only(
                             topLeft: Radius.circular(30),
@@ -100,13 +96,8 @@ class RoutinePage extends StatelessWidget {
             SizedBox(height: 40,),
 
             GestureDetector(
-              onTap: ()async{
-                final url = "https://www.sspi.edu.bd/academics/exam-routine/";
-                if(await canLaunch(url)){
-                  await launch(url,
-
-                  );
-                }
+              onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context) =>ElictricalTecnology(), ),);
               },
               child: Container(
                 height: 90,
@@ -117,7 +108,7 @@ class RoutinePage extends StatelessWidget {
                     Padding(
                       padding: EdgeInsets.only(left: 10),
                       child: Text(
-                        "Exam Routin",
+                        "Elictrical Tecnology",
                         style: TextStyle(
                             fontSize: 20,
                             color: kTextColor,
@@ -130,9 +121,12 @@ class RoutinePage extends StatelessWidget {
                       child: Container(
                         height: 40,
                         width: 55,
-                        child: Icon(Icons.east,color: Colors.white,size: 25,),
+                        child:  Padding(
+                          padding: const EdgeInsets.all(6.0),
+                          child: Image(image:AssetImage("assets/icons/Elictrical.png"),color: Colors.white,),
+                        ),
                         decoration: BoxDecoration(
-                          color: Color(0xff14f076),
+                          color: accentColor,
                           borderRadius:
                           BorderRadius.only(
                             topLeft: Radius.circular(30),
@@ -162,16 +156,9 @@ class RoutinePage extends StatelessWidget {
             SizedBox(height: 40,),
 
             GestureDetector(
-              onTap: () async{
-                final url = "https://www.sspi.edu.bd/mid-exam-routine/";
-                if(await canLaunch(url)){
-                  await launch(url,
-
-                  );
-                }
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) =>CIVILTecnology(), ),);
               },
-
-
               child: Container(
                 height: 90,
                 width: 300,
@@ -181,7 +168,7 @@ class RoutinePage extends StatelessWidget {
                     Padding(
                       padding: EdgeInsets.only(left: 10),
                       child: Text(
-                        "Mid Exam Routin",
+                        "CIVIL Tecnology",
                         style: TextStyle(
                             fontSize: 20,
                             color: kTextColor,
@@ -194,9 +181,12 @@ class RoutinePage extends StatelessWidget {
                       child: Container(
                         height: 40,
                         width: 55,
-                        child: Icon(Icons.east,color: Colors.white,size: 25,),
+                        child:  Padding(
+                          padding: const EdgeInsets.all(6.0),
+                          child: Image(image:AssetImage("assets/icons/cvil .png"),color: Colors.white,),
+                        ),
                         decoration: BoxDecoration(
-                          color: Color(0xff14f076),
+                          color: accentColor,
                           borderRadius:
                           BorderRadius.only(
                             topLeft: Radius.circular(30),
@@ -222,6 +212,7 @@ class RoutinePage extends StatelessWidget {
                 ),
               ),
             ),
+            SizedBox(height: 10,),
 
           ],
         ),

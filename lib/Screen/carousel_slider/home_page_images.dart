@@ -4,14 +4,14 @@ import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:sspi/constants.dart';
 
-class SliderImages extends StatefulWidget {
+class HomeSliderImages extends StatefulWidget {
 
   @override
-  State<SliderImages> createState() => _SliderImagesState();
-  const SliderImages({Key? key}) : super(key: key);
+  State<HomeSliderImages> createState() => _HomeSliderImagesState();
+  const HomeSliderImages({Key? key}) : super(key: key);
 }
 
-class _SliderImagesState extends State<SliderImages> {
+class _HomeSliderImagesState extends State<HomeSliderImages> {
   int activeIndex = 0;
   final assetsImages = [
     'assets/images/sspi_Photo_Gallery-1.jpg',

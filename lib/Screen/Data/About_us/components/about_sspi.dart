@@ -1,6 +1,7 @@
 
 import 'dart:ui';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:sspi/constants.dart';
 
@@ -18,17 +19,6 @@ class About_SSPI extends StatelessWidget {
       appBar: AppBar(title: const Text("About College"),
         backgroundColor: kPrimaryColor,shadowColor: Colors.transparent,),
       body:
-      SizedBox(height: size.height,
-        width: double.maxFinite,
-        child: Stack(
-          fit: StackFit.expand,
-          children: [
-            ImageFiltered(
-              imageFilter: ImageFilter.blur(sigmaY: 2,sigmaX: 2.5),
-              child: Image.asset(
-                "assets/images/logo_720.png",
-              ),
-            ),
             SingleChildScrollView(
               reverse: true,
               child: Padding(
@@ -64,11 +54,11 @@ class About_SSPI extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(height: 7,),
-                    Text(about,style: TextStyle(color: kTextColor),),
+                    Text(about,textAlign: TextAlign.justify,style: TextStyle(color: kTextColor),),
                     const SizedBox(height: 7,),
-                    Text(about_2,style: TextStyle(color: kTextColor),),
+                    Text(about_2,textAlign: TextAlign.justify,style: TextStyle(color: kTextColor),),
                     const SizedBox(height: 7,),
-                    Text(about_3,style: TextStyle(color: kTextColor),),
+                    Text(about_3,textAlign: TextAlign.justify,style: TextStyle(color: kTextColor),),
 
                     GestureDetector(
                       onTap: (){
@@ -86,13 +76,13 @@ class About_SSPI extends StatelessWidget {
                         children: [
                           Container(
                             height: 1,
-                            width: 150,
+                            width:  size.width * 0.4,
                             color: kTextColor,
                           ),
                           const Text("</>", style: TextStyle(color: accentColor),),
                           Container(
                             height: 1,
-                            width: 150,
+                            width: size.width * 0.4,
                             color: kTextColor,
                           )
                         ],
@@ -102,12 +92,6 @@ class About_SSPI extends StatelessWidget {
                 ),
               ),
             ),
-
-          ],
-        ),
-
-      ),
-
     );
 
   }
